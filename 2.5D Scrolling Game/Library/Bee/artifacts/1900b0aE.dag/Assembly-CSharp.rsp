@@ -365,12 +365,15 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"D:/Unity/Hub/Editor/2022.3.6f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"D:/Unity/Hub/Editor/2022.3.6f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
-"Assets/enemyDamage.cs"
-"Assets/playerHealth.cs"
+"Assets/meleeScript.cs"
+"Assets/Script/cleaner.cs"
 "Assets/Script/DestroyME.cs"
+"Assets/Script/enemyDamage.cs"
 "Assets/Script/fireBullet.cs"
 "Assets/Script/playerController.cs"
+"Assets/Script/playerHealth.cs"
 "Assets/Script/shootBullet.cs"
+"Assets/shootFireBall.cs"
 -langversion:9.0
 
 /deterministic

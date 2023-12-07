@@ -9,6 +9,8 @@ public class playerController : MonoBehaviour
     //movement
     public float runSpeed;
     public float walkSpeed;
+    bool running;
+
     Rigidbody myRB;
     Animator myAnim;
     bool facingRight;
@@ -37,6 +39,8 @@ void Start()
 
     void FixedUpdate()
     {
+        running= false;
+
         if(grounded && Input.GetAxis("Jump")>0){
             grounded = false;
             myAnim.SetBool("grounded",grounded);
@@ -66,6 +70,7 @@ void Start()
         else
         {
             myRB.velocity = new Vector3(move * runSpeed, myRB.velocity.y, 0);
+            if(Mathf.Abs(move)>0)running = true;
         }
 
 
@@ -83,6 +88,10 @@ void Start()
     {
         if(facingRight)return 1;
         else return -1;
+    }
+
+    public bool getRunning(){
+        return (running);
     }
 
 }
