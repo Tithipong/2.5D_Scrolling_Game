@@ -1,19 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Timeline;
 
-public class enemyDamage : MonoBehaviour
+public class EnemyDamage : MonoBehaviour
 {
     public float damage;
     public float damageRate;
     public float pushBackForce;
 
     float nextDamage;
-    bool playerInRage = false;
+    bool playerInRange = false;
     GameObject thePlayer;
     PlayerHealth thePlayerHealth;
-    // Start is called before the first frame update
+
     void Start()
     {
         nextDamage = Time.time;
@@ -21,42 +20,48 @@ public class enemyDamage : MonoBehaviour
         thePlayerHealth = thePlayer.GetComponent<PlayerHealth>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (playerInRage) Attack();
+        if (playerInRange)
+        {
+            Attack();
+        }
     }
+
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            playerInRage = true;
+            playerInRange = true;
+            nextDamage = Time.time; // Reset the nextDamage timer when player enters range
         }
     }
-    void OntrigerExit(Collider other)
+
+    void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            playerInRage = false;
+            playerInRange = false;
         }
     }
+
     void Attack()
     {
         if (nextDamage <= Time.time)
         {
             thePlayerHealth.addDamage(damage);
             nextDamage = Time.time + damageRate;
-
             pushBack(thePlayer.transform);
         }
     }
+
     void pushBack(Transform pushObject)
     {
-        Vector3 pushDirrection = new Vector3(0, (pushObject.position.y - transform.position.y), 0).normalized;
-        pushDirrection *= pushBackForce;
+        Vector3 pushDirection = new Vector3(0, (pushObject.position.y - transform.position.y), 0).normalized;
+        pushDirection *= pushBackForce;
 
         Rigidbody pushedRB = pushObject.GetComponent<Rigidbody>();
         pushedRB.velocity = Vector3.zero;
-        pushedRB.AddForce(pushDirrection, ForceMode.Impulse);
+        pushedRB.AddForce(pushDirection, ForceMode.Impulse);
     }
 }
