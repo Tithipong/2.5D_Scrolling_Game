@@ -47,6 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenBullets: 0.15
   projectile: {fileID: 5398105883283312949, guid: 12c38df079b1ce44083b83e87b0b04a8, type: 3}
+  playerAmmoSlider: {fileID: 0}
+  maxRounds: 100
+  startingRounds: 100
 --- !u!114 &971021962216246337
 MonoBehaviour:
   m_ObjectHideFlags: 0
