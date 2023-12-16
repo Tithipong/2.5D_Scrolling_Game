@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,12 +17,16 @@ public class PlayerHealth : MonoBehaviour
     float flashSpeed = 5f;
     bool damaged = false;
 
+    AudioSource playerAS;
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = fullHealth;
         playerHealthSlider.maxValue = fullHealth;
         playerHealthSlider.value = currentHealth;
+
+        playerAS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -43,6 +47,9 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
         playerHealthSlider.value = currentHealth;
         damaged =true;
+
+        playerAS.Play();
+
         if (currentHealth <= 0)
         {
             makeDead();

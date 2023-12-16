@@ -16,6 +16,11 @@ public class fireBullet : MonoBehaviour
 
     float nextBullet;
 
+    //audio info
+    AudioSource gunMuzzleAS;
+    public AudioClip shootSound;
+    public AudioClip reloadSound;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -23,6 +28,7 @@ public class fireBullet : MonoBehaviour
         remainingRounds = startingRounds;
         playerAmmoSlider.maxValue = maxRounds;
         playerAmmoSlider.value = remainingRounds;
+        gunMuzzleAS = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -41,6 +47,8 @@ public class fireBullet : MonoBehaviour
 
             Instantiate(projectile, transform.position, Quaternion.Euler(rot));
 
+            playASound(shootSound);
+
             remainingRounds -=1;
             playerAmmoSlider.value = remainingRounds;
         }
@@ -49,6 +57,12 @@ public class fireBullet : MonoBehaviour
     public void reload(){
         remainingRounds = maxRounds;
         playerAmmoSlider.value = remainingRounds;
+        playASound(reloadSound);
         
+    }
+
+    void playASound(AudioClip playTheSound){
+        gunMuzzleAS.clip = playTheSound;
+        gunMuzzleAS.Play();
     }
 }
