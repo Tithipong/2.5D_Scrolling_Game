@@ -22,15 +22,7 @@ public class shootBullet : MonoBehaviour
         shootRay.direction = transform.forward;
         gunLine.SetPosition(0,transform.position);
         if(Physics.Raycast(shootRay, out shootHit, range, shootableMask))
-        {   
-            if (shootHit.collider.tag == "Enemy")
-            {
-                enemyHealth theEnemyHealth = shootHit.collider.GetComponent<enemyHealth>();
-                if(theEnemyHealth != null){
-                    theEnemyHealth.addDamage(damage);
-                    theEnemyHealth.damageFX(shootHit.point ,-shootRay.direction);
-                }
-            }
+        {
             //hit enemy 
             gunLine.SetPosition(1,shootHit.point);
         }

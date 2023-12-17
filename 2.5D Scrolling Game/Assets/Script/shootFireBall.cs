@@ -32,15 +32,9 @@ public class shootFireBall : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Enemy" ||other.gameObject.layer == LayerMask.NameToLayer("Shootable"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Shootable"))
         {
             myRB.velocity = Vector3.zero;
-            enemyHealth theEnemyHealth = other.GetComponent<enemyHealth>();
-            if (theEnemyHealth != null)
-            {
-                theEnemyHealth.addDamage(damage);
-                theEnemyHealth.addFire();
-            }
             Destroy(gameObject);
         }
     }

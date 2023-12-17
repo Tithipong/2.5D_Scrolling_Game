@@ -4876,7 +4876,6 @@ GameObject:
   - component: {fileID: 4737249250030657250}
   - component: {fileID: 944039821371742808}
   - component: {fileID: 1087703156495168589}
-  - component: {fileID: 2799997950415089311}
   m_Layer: 0
   m_Name: fireBallProjectile
   m_TagString: Untagged
@@ -4941,20 +4940,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   aliveTime: 3.5
---- !u!114 &2799997950415089311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5398105883283312949}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b639849e5945b0847990e932778be8cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  speed: 1
 --- !u!1001 &1227033604925201210
 PrefabInstance:
   m_ObjectHideFlags: 0
