@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2477e6a6e720bae47a6a745a32eb5b6e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.616108
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2477e6a6e720bae47a6a745a32eb5b6e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.046998978
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2477e6a6e720bae47a6a745a32eb5b6e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.021130562
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2477e6a6e720bae47a6a745a32eb5b6e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -30,11 +30,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2477e6a6e720bae47a6a745a32eb5b6e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2477e6a6e720bae47a6a745a32eb5b6e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2477e6a6e720bae47a6a745a32eb5b6e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -62,11 +62,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7714743477055077921, guid: 2477e6a6e720bae47a6a745a32eb5b6e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.96
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7714743477055077921, guid: 2477e6a6e720bae47a6a745a32eb5b6e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7714743477055077921, guid: 2477e6a6e720bae47a6a745a32eb5b6e, type: 3}
       propertyPath: m_ConstrainProportionsScale
@@ -154,3 +154,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthAmount: 100
+  healthPickupSound: {fileID: 0}
