@@ -87,7 +87,7 @@ public class enemyHealth : MonoBehaviour
     Quaternion enemyRotation = transform.rotation;
     AudioSource.PlayClipAtPoint(deathSound, transform.position, 0.15f);
     Destroy(gameObject.transform.root.gameObject);
-
+    
     if (drops) 
     {
         // Instantiate the drop using the enemy's position and rotation
@@ -98,9 +98,6 @@ public class enemyHealth : MonoBehaviour
 
         // Set the drop's rotation to match the enemy
         instantiatedDrop.transform.rotation = enemyRotation;
-
-        Debug.Log("Drop instantiated at: " + instantiatedDrop.transform.position); // Check the instantiated drop's position
-        Debug.Log("Drop rotation instantiated at: " + instantiatedDrop.transform.rotation); // Check the instantiated drop's rotation
     }
 
     
