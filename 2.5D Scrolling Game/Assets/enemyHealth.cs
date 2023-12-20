@@ -98,12 +98,6 @@ public class enemyHealth : MonoBehaviour
 
         // Set the drop's rotation to match the enemy
         instantiatedDrop.transform.rotation = enemyRotation;
-
-        Debug.Log("Drop position instantiated at: " + enemyPosition); // Check the instantiated drop's rotation
-        Debug.Log("Drop rotation instantiated at: " + enemyRotation); // Check the instantiated drop's rotation
-
-        Debug.Log("Drop position instantiated at: " + instantiatedDrop.transform.position); // Check the instantiated drop's position
-        Debug.Log("Drop rotation instantiated at: " + instantiatedDrop.transform.rotation); // Check the instantiated drop's rotation
     }
 
     

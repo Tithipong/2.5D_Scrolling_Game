@@ -380,6 +380,7 @@
 "Assets/Script/playerHealth.cs"
 "Assets/Script/shootBullet.cs"
 "Assets/Script/shootFireBall.cs"
+"Assets/zombieController.cs"
 -langversion:9.0
 
 /deterministic
