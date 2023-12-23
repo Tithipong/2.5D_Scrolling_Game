@@ -1530,6 +1530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   flipModel: {fileID: 1738625399}
+  ragdollDead: {fileID: 7806655251439596870, guid: a2b87e7f9e609114fab27864fe4728c5, type: 3}
   idleSound:
   - {fileID: 8300000, guid: 436c55882526e6e4ba215c90e2faba4d, type: 3}
   - {fileID: 8300000, guid: c0ed68f60f0ca89429bf02d2daa379da, type: 3}
@@ -2324,7 +2325,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!65 &1055131745
 BoxCollider:
@@ -4224,6 +4225,10 @@ PrefabInstance:
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 6cb668d87b8107a41885f16fdac10b3c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6cb668d87b8107a41885f16fdac10b3c, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
@@ -4856,7 +4861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1866911681075903995, guid: c122141e1aca64b468986e248ae84040, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1866911681075903995, guid: c122141e1aca64b468986e248ae84040, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4982,7 +4987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1541196273995595053, guid: 1fd3fa35708d15a44a1467abd5a23610, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1541196273995595053, guid: 1fd3fa35708d15a44a1467abd5a23610, type: 3}
       propertyPath: m_LocalPosition.z

@@ -85,18 +85,20 @@ public class enemyHealth : MonoBehaviour
     // Store the position and rotation before destroying the enemy
     Vector3 enemyPosition = transform.position;
     Quaternion enemyRotation = transform.rotation;
+
+    zombieController aZombie = GetComponentInChildren<zombieController>();
+    if (aZombie != null)
+    {
+        aZombie.ragDollDeath();
+    }
+
     AudioSource.PlayClipAtPoint(deathSound, transform.position, 0.15f);
     Destroy(gameObject.transform.root.gameObject);
     
     if (drops) 
     {
-        // Instantiate the drop using the enemy's position and rotation
         GameObject instantiatedDrop = Instantiate(drop, enemyPosition, Quaternion.identity);
-
-        // Set the drop's position to match the enemy
         instantiatedDrop.transform.position = enemyPosition;
-
-        // Set the drop's rotation to match the enemy
         instantiatedDrop.transform.rotation = enemyRotation;
     }
 
