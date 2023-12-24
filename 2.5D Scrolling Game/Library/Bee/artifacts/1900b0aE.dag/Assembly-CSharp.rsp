@@ -368,6 +368,7 @@
 "Assets/Script/ammoPickupController.cs"
 "Assets/Script/cleaner.cs"
 "Assets/Script/DestroyME.cs"
+"Assets/Script/electicityTrap.cs"
 "Assets/Script/enemyDamage.cs"
 "Assets/Script/enemyHealth.cs"
 "Assets/Script/evaletorController.cs"

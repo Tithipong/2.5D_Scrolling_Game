@@ -57,7 +57,7 @@ public class enemyHealth : MonoBehaviour
     public void addDamage(float damage)
     {
         enemyHealthIndicator.gameObject.SetActive(true);
-        damage = damage * damageModifier;
+        damage *= damageModifier;
         if (damage <= 0f) return;
         currentHealth -= damage;
         enemyHealthIndicator.value = currentHealth;
