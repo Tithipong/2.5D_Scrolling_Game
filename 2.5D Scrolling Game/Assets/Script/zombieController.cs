@@ -123,7 +123,6 @@ public class zombieController : MonoBehaviour
         Vector3 theScale = flipModel.transform.localScale;
         theScale.z *= -1;
         flipModel.transform.localScale = theScale;
-
     }
 
     public void ragDollDeath(){
