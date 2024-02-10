@@ -33,7 +33,7 @@ public class zombieController : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         myRB = GetComponentInParent<Rigidbody>();
         myAnim = GetComponentInParent<Animator>();
@@ -50,10 +50,9 @@ public class zombieController : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    public void FixedUpdate()
     {
-        if (Detected)
+        if (Detected && detectedPlayer != null)
         {
             if (detectedPlayer.position.x < transform.position.x && facingRight)Flip();
             else if(detectedPlayer.position.x > transform.position.x && !facingRight)Flip();

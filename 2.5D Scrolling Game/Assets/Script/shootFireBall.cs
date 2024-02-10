@@ -6,11 +6,9 @@ public class shootFireBall : MonoBehaviour
 {
     public float damage;
     public float speed;
-
     Rigidbody myRB;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         myRB = GetComponentInParent<Rigidbody>();
 
@@ -25,12 +23,7 @@ public class shootFireBall : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-    void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy" ||other.gameObject.layer == LayerMask.NameToLayer("Shootable"))
         {

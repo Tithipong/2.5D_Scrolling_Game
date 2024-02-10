@@ -12,7 +12,7 @@ public class explosionController : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         Vector3 explosionPos= transform.position;
         Collider[]  colliders = Physics.OverlapSphere(explosionPos, radius);
@@ -39,7 +39,7 @@ public class explosionController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         explposionLight.intensity = Mathf.Lerp(explposionLight.intensity, 0f,5*Time.time);
     }

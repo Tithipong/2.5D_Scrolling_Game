@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class playerController : MonoBehaviour
 {
-    
-    
+
+
     //movement
     public float runSpeed;
     public float walkSpeed;
@@ -23,54 +23,54 @@ public class playerController : MonoBehaviour
     public Transform groundCheck;
     public float jumpHeight;
 
-// Start is called before the first frame update
-void Start()
-{
-    myRB = GetComponent<Rigidbody>();
-    myAnim = GetComponent<Animator>();
-    facingRight = true;
-}
-
+    public void Start()
+    {
+        myRB = GetComponent<Rigidbody>();
+        myAnim = GetComponent<Animator>();
+        facingRight = true;
+    }
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
 
     }
 
-    void FixedUpdate()
+    public void FixedUpdate()
     {
-        running= false;
+        running = false;
 
-        if(grounded && Input.GetAxis("Jump")>0){
+        if (grounded && Input.GetAxis("Jump") > 0)
+        {
             grounded = false;
-            myAnim.SetBool("grounded",grounded);
-            myRB.AddForce(new Vector3(0,jumpHeight,0) );
+            myAnim.SetBool("grounded", grounded);
+            myRB.AddForce(new Vector3(0, jumpHeight, 0));
         }
 
 
         groundCollisions = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer);
-        if(groundCollisions.Length>0) grounded = true;
+        if (groundCollisions.Length > 0) grounded = true;
         else grounded = false;
 
-        myAnim.SetBool("grounded",grounded);
+        myAnim.SetBool("grounded", grounded);
 
         float move = Input.GetAxis("Horizontal");
         myAnim.SetFloat("speed", Mathf.Abs(move));
-       
-        float sneaking =Input.GetAxisRaw("Fire3");
-        myAnim.SetFloat("sneaking",sneaking);
+
+        float sneaking = Input.GetAxisRaw("Fire3");
+        myAnim.SetFloat("sneaking", sneaking);
 
         float firing = Input.GetAxis("Fire1");
-        myAnim.SetFloat("shooting",firing);
+        myAnim.SetFloat("shooting", firing);
 
-        if(sneaking>0 ||firing>0 && grounded){
-           
+        if (sneaking > 0 || firing > 0 && grounded)
+        {
+
             myRB.velocity = new Vector3(move * walkSpeed, myRB.velocity.y, 0);
         }
         else
         {
             myRB.velocity = new Vector3(move * runSpeed, myRB.velocity.y, 0);
-            if(Mathf.Abs(move)>0)running = true;
+            if (Mathf.Abs(move) > 0) running = true;
         }
 
 
@@ -86,11 +86,12 @@ void Start()
     }
     public float GetFacing()
     {
-        if(facingRight)return 1;
+        if (facingRight) return 1;
         else return -1;
     }
 
-    public bool getRunning(){
+    public bool getRunning()
+    {
         return (running);
     }
 

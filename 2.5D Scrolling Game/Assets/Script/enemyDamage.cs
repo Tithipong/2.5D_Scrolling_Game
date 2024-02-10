@@ -7,20 +7,19 @@ public class EnemyDamage : MonoBehaviour
     public float damage;
     public float damageRate;
     public float pushBackForce;
+    private float nextDamage;
+    private bool playerInRange = false;
+    private GameObject thePlayer;
+    private PlayerHealth thePlayerHealth;
 
-    float nextDamage;
-    bool playerInRange = false;
-    GameObject thePlayer;
-    PlayerHealth thePlayerHealth;
-
-    void Start()
+    public void Start()
     {
         nextDamage = Time.time;
         thePlayer = GameObject.FindGameObjectWithTag("Player");
         thePlayerHealth = thePlayer.GetComponent<PlayerHealth>();
     }
 
-    void Update()
+    public void Update()
     {
         if (playerInRange)
         {
@@ -28,7 +27,7 @@ public class EnemyDamage : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -37,24 +36,25 @@ public class EnemyDamage : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider other)
+    public void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
         }
     }
-
     void Attack()
     {
         if (nextDamage <= Time.time)
         {
-            thePlayerHealth.addDamage(damage);
-            nextDamage = Time.time + damageRate;
-            pushBack(thePlayer.transform);
+            if (thePlayerHealth != null)
+            {
+                thePlayerHealth.addDamage(damage);
+                nextDamage = Time.time + damageRate;
+                pushBack(thePlayer.transform);
+            } 
         }
     }
-
     void pushBack(Transform pushObject)
     {
         Vector3 pushDirection = new Vector3(0, (pushObject.position.y - transform.position.y), 0).normalized;

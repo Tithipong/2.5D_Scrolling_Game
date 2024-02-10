@@ -9,7 +9,8 @@ public class enemyHealth : MonoBehaviour
     public float damageModifier;
     public GameObject damageParticles;
     public bool drops;
-    public GameObject drop;
+    public GameObject[] drop;
+    private GameObject[] instantiatedDrop;
     public AudioClip deathSound;
     public bool canBurm;
     public float burnDamage;
@@ -28,8 +29,6 @@ public class enemyHealth : MonoBehaviour
 
     AudioSource enemyAS;
 
-
-
     // Start is called before the first frame update
     void Awake()
     {
@@ -40,7 +39,7 @@ public class enemyHealth : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (onFire && Time.time > nextBurn)
         {
@@ -95,15 +94,12 @@ public class enemyHealth : MonoBehaviour
     AudioSource.PlayClipAtPoint(deathSound, transform.position, 0.15f);
     Destroy(gameObject.transform.root.gameObject);
     
-    if (drops) 
-    {
-        GameObject instantiatedDrop = Instantiate(drop, enemyPosition, Quaternion.identity);
+    if (drops)
+    {   
+        GameObject instantiatedDrop = Instantiate(drop[Random.Range(0, 2)],enemyPosition, Quaternion.identity);
         instantiatedDrop.transform.position = enemyPosition;
         instantiatedDrop.transform.rotation = enemyRotation;
+        Debug.Log("Dropped"+ " " + drop.Length);
     }
-
-    
 }
-
-
 }

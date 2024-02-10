@@ -370,6 +370,8 @@
 -analyzer:"D:/Unity/Hub/Editor/2022.3.6f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Script/ammoPickupController.cs"
 "Assets/Script/cleaner.cs"
+"Assets/Script/ControlBTT.cs"
+"Assets/Script/countTime.cs"
 "Assets/Script/DestroyME.cs"
 "Assets/Script/electicityTrap.cs"
 "Assets/Script/enemyDamage.cs"
@@ -383,8 +385,10 @@
 "Assets/Script/playerController.cs"
 "Assets/Script/playerHealth.cs"
 "Assets/Script/randomizeZombieAppearance.cs"
+"Assets/Script/ShoiwPlayerWin.cs"
 "Assets/Script/shootBullet.cs"
 "Assets/Script/shootFireBall.cs"
+"Assets/Script/SpawnEnemy.cs"
 "Assets/Script/zombieController.cs"
 -langversion:9.0
 

@@ -12,8 +12,7 @@ public class shootBullet : MonoBehaviour
     int shootableMask;
     LineRenderer gunLine;
 
-    // Start is called before the first frame update
-    void Awake()
+    public void Awake()
     {
         shootableMask = LayerMask.GetMask("Shootable");
         gunLine= GetComponent<LineRenderer>(); 
@@ -36,11 +35,5 @@ public class shootBullet : MonoBehaviour
         }
         else gunLine.SetPosition(1, shootRay.origin+shootRay.direction*range);
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

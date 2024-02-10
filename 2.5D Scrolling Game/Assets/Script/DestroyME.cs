@@ -5,19 +5,16 @@ using UnityEngine;
 public class DestroyME : MonoBehaviour
 {
     public float aliveTime;
+    public bool destroyOnAwake;
 
 
 
     // Start is called before the first frame update
-    void Awake()
+    public void Awake()
     {
-        Destroy (gameObject, aliveTime);
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (destroyOnAwake != false)
+        {
+            Destroy (gameObject, aliveTime);
+        }         
     }
 }

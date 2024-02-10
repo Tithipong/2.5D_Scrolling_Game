@@ -8,7 +8,7 @@ public class randomizeZombieAppearance : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         SkinnedMeshRenderer myRenderer = GetComponent<SkinnedMeshRenderer>();
         myRenderer.material = zombieMaterails[Random.Range(0,zombieMaterails.Length)];
@@ -16,7 +16,7 @@ public class randomizeZombieAppearance : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         
     }
