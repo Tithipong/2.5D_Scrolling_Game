@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638430937773464626
-    m_Hash: 2108653600
+      ticks: 638432030529520013
+    m_Hash: 2587855099
   m_LockFileStatus:
     m_FilePath: D:/MY_PJ_Game/2.5D_Scrolling_Game/2.5D Scrolling Game/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638430937773499820
-    m_Hash: 2224444730
+      ticks: 638432030529520013
+    m_Hash: 1996702789
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
